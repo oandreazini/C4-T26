@@ -4,19 +4,27 @@ import java.util.List;
 
 import javax.persistence.Column;
 import javax.persistence.Entity;
-
+import javax.persistence.FetchType;
+import javax.persistence.GeneratedValue;
+import javax.persistence.GenerationType;
 import javax.persistence.Id;
 import javax.persistence.JoinColumn;
 import javax.persistence.OneToMany;
 import javax.persistence.Table;
+
+import com.fasterxml.jackson.annotation.JsonIgnore;
 
 @Entity
 @Table(name = "cientificos")
 public class Cientificos {
 
 	// Atributos de entidad piezas
+	
 	@Id
+		
+	@Column(name = "dni")
 	private String dni;
+	
 	@Column(name = "nombre_apellidos") 
 	private String nombre_apellidos;
 
@@ -30,18 +38,22 @@ public class Cientificos {
 	}
 	
 	/**
-	 * 
+	 * 	
+	 * @param id
 	 * @param dni
 	 * @param nombre_apellidos
 	 * @param asignadoA
 	 */
 	public Cientificos(String dni, String nombre_apellidos, List<AsignadoA> asignadoA) {
+		
 		this.dni = dni;
 		this.nombre_apellidos = nombre_apellidos;
 		this.asignadoA = asignadoA;
 	}
-	
+
+
 	// getter y setter
+	
 	/**
 	 * 
 	 * @return
@@ -78,6 +90,8 @@ public class Cientificos {
 	 * 
 	 * @return
 	 */
+	@JsonIgnore
+	@OneToMany(fetch = FetchType.LAZY, mappedBy = "AsignadoA")
 	public List<AsignadoA> getAsignadoA() {
 		return asignadoA;
 	}
