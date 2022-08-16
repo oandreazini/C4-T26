@@ -18,7 +18,7 @@ import com.fasterxml.jackson.annotation.JsonIgnore;
 @Table(name = "proyectos")
 public class Proyectos {
 
-	// Atributos de entidad piezas
+	// Atributos de entidad proyectos
 	@Id
 	@GeneratedValue(strategy = GenerationType.IDENTITY)
 	private int id;

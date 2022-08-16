@@ -16,9 +16,9 @@ import com.fasterxml.jackson.annotation.JsonIgnore;
 
 @Entity
 @Table(name = "cientificos")
-public class Cientificos {
+public class Cajeros {
 
-	// Atributos de entidad piezas
+	// Atributos de entidad cientificos
 	
 	@Id
 		
@@ -33,7 +33,7 @@ public class Cientificos {
 	private List<AsignadoA> asignadoA;
 	
 	//Constructores
-	public Cientificos() {
+	public Cajeros() {
 	
 	}
 	
@@ -44,7 +44,7 @@ public class Cientificos {
 	 * @param nombre_apellidos
 	 * @param asignadoA
 	 */
-	public Cientificos(String dni, String nombre_apellidos, List<AsignadoA> asignadoA) {
+	public Cajeros(String dni, String nombre_apellidos, List<AsignadoA> asignadoA) {
 		
 		this.dni = dni;
 		this.nombre_apellidos = nombre_apellidos;
@@ -106,7 +106,7 @@ public class Cientificos {
 
 	@Override
 	public String toString() {
-		return "Cientificos [dni=" + dni + ", nombre_apellidos=" + nombre_apellidos + ", asignadoA=" + asignadoA + "]";
+		return "Cajeros [dni=" + dni + ", nombre_apellidos=" + nombre_apellidos + ", asignadoA=" + asignadoA + "]";
 	}
 
 }
