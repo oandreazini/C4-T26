@@ -39,8 +39,8 @@ public class Proveedores {
 		 * @param nombre
 		 * @param suministra
 		 */
-		public Proveedores(int id, String nombre, List<Suministra> suministra) {
-			this.codigo = id;
+		public Proveedores(int codigo, String nombre, List<Suministra> suministra) {
+			this.codigo = codigo;
 			this.nombre = nombre;
 			this.suministra = suministra;
 		}
@@ -51,7 +51,7 @@ public class Proveedores {
 		 * 
 		 * @return
 		 */
-		public int getId() {
+		public int getCodigo() {
 			return codigo;
 		}
 		
@@ -59,7 +59,7 @@ public class Proveedores {
 		 * 
 		 * @param id
 		 */
-		public void setId(int codigo) {
+		public void setCodigo(int codigo) {
 			this.codigo = codigo;
 		}
 		

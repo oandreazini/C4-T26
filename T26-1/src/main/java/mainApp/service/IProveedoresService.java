@@ -11,9 +11,9 @@ public interface IProveedoresService {
 
 	public Proveedores saveProveedores(Proveedores proveedores);	//Guarda un proveedores CREATE
 
-	public Proveedores proveedoresXID(Integer id); //Leer datos de un proveedores READ
+	public Proveedores proveedoresXID(Integer codigo); //Leer datos de un proveedores READ
 
 	public Proveedores updateProveedores(Proveedores proveedores); //Actualiza datos del proveedores UPDATE
 
-	public void deleteProveedores(Integer id);// Elimina el proveedores DELETE
+	public void deleteProveedores(Integer codigo);// Elimina el proveedores DELETE
 }

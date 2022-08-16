@@ -59,7 +59,7 @@ public class ProveedoresController {
 		return proveedores_update;
 	}
 
-	@DeleteMapping("/proveedores/{id}")
+	@DeleteMapping("/proveedores/{codigo}")
 	public void deleteProveedores(@PathVariable(name = "codigo") int codigo) {
 		proveedoresServiceImpl.deleteProveedores(codigo);
 	}
