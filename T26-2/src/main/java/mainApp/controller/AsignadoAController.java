@@ -34,7 +34,7 @@ public class AsignadoAController {
 		return asignadoAServiceImpl.saveAsignadoA(asignadoa);
 	}
 
-	@GetMapping("/asignadoa/{dni}")
+	@GetMapping("/asignadoa/{id}")
 	public AsignadoA asignadoAXID(@PathVariable(name = "id") Integer id) {
 
 		return asignadoAServiceImpl.asignadoAXID(id);

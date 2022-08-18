@@ -30,7 +30,7 @@ public class Investigadores {
 	private String nombre_apellidos;
 	
 	@ManyToOne
-	@JoinColumn(name="facultades")
+	@JoinColumn(name="facultad")
 	private Facultades facultades;
 	
 	@OneToMany
