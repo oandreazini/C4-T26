@@ -37,7 +37,7 @@ insert into `providers`  ( `name`) values ('Saltoki');
 insert into `providers`  ( `name`) values ('Bauhaus');
 insert into `providers`  ( `name`) values ('Leroy');
 
-insert into `supplies` (`id_pieces`, `id_providers`, `price`) values ( 11, 11, 2 );
-insert into `supplies` (`id_pieces`, `id_providers`, `price`) values ( 21, 21, 3);
-insert into `supplies` (`id_pieces`, `id_providers`, `price` ) values (31, 31, 5);
+insert into `supplies` (`id_pieces`, `id_providers`, `price`) values ( 1, 1, 2 );
+insert into `supplies` (`id_pieces`, `id_providers`, `price`) values ( 11, 11, 3);
+insert into `supplies` (`id_pieces`, `id_providers`, `price` ) values (21, 21, 5);
 
