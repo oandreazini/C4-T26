@@ -9,7 +9,8 @@ import javax.persistence.ManyToOne;
 import javax.persistence.Table;
 
 @Entity
-@Table(name = "asignado_a")
+@Table(name = "asignado_a", schema = "asignado_a")
+
 public class AsignadoA {
 
 	// Atributos de entidad asignado_a
@@ -19,7 +20,7 @@ public class AsignadoA {
 	
 	@ManyToOne
 	@JoinColumn(name = "cientifico")
-	private Cajeros cajeros;
+	private Cientificos cientificos;
 
 	@ManyToOne
 	@JoinColumn(name = "proyecto")
@@ -33,12 +34,12 @@ public class AsignadoA {
 	/**
 	 * 
 	 * @param id
-	 * @param cajeros
+	 * @param cientificos
 	 * @param proyectos
 	 */
-	public AsignadoA(int id, Cajeros cajeros, Proyectos proyectos) {
+	public AsignadoA(int id, Cientificos cientificos, Proyectos proyectos) {
 		this.id = id;
-		this.cajeros = cajeros;
+		this.cientificos = cientificos;
 		this.proyectos = proyectos;
 	}
 	
@@ -64,16 +65,16 @@ public class AsignadoA {
 	 * 
 	 * @return
 	 */
-	public Cajeros getCientificos() {
-		return cajeros;
+	public Cientificos getCientificos() {
+		return cientificos;
 	}
 	
 	/**
 	 * 
-	 * @param cajeros
+	 * @param cientificos
 	 */
-	public void setCientificos(Cajeros cajeros) {
-		this.cajeros = cajeros;
+	public void setCientificos(Cientificos cientificos) {
+		this.cientificos = cientificos;
 	}
 	
 	/**
@@ -94,7 +95,7 @@ public class AsignadoA {
 
 	@Override
 	public String toString() {
-		return "AsignadoA [id=" + id + ", cajeros=" + cajeros + ", proyectos=" + proyectos + "]";
+		return "AsignadoA [id=" + id + ", cientificos=" + cientificos + ", proyectos=" + proyectos + "]";
 	}
 
 }

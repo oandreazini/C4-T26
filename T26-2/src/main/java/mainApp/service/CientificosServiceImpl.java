@@ -6,7 +6,7 @@ import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
 
 import mainApp.dao.ICientificosDAO;
-import mainApp.dto.Cajeros;
+import mainApp.dto.Cientificos;
 
 @Service
 public class CientificosServiceImpl implements ICientificosService{
@@ -16,27 +16,27 @@ public class CientificosServiceImpl implements ICientificosService{
 	ICientificosDAO iCientificosDAO;
 
 	@Override
-	public List<Cajeros> listCientificos() {
+	public List<Cientificos> listCientificos() {
 		
 		return iCientificosDAO.findAll();
 	}
 
 	@Override
-	public Cajeros saveCientificos(Cajeros cajeros) {
+	public Cientificos saveCientificos(Cientificos cientificos) {
 		
-		return iCientificosDAO.save(cajeros);
+		return iCientificosDAO.save(cientificos);
 	}
 
 	@Override
-	public Cajeros cientificosXID(String dni) {
+	public Cientificos cientificosXID(String dni) {
 		
 		return iCientificosDAO.findById(dni).get();
 	}
 
 	@Override
-	public Cajeros updateCientificos(Cajeros cajeros) {
+	public Cientificos updateCientificos(Cientificos cientificos) {
 		
-		return iCientificosDAO.save(cajeros);
+		return iCientificosDAO.save(cientificos);
 	}
 
 	@Override

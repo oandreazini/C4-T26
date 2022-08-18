@@ -12,7 +12,7 @@ import org.springframework.web.bind.annotation.RequestBody;
 import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RestController;
 
-import mainApp.dto.Cajeros;
+import mainApp.dto.Cientificos;
 import mainApp.service.CientificosServiceImpl;
 
 @RestController
@@ -23,34 +23,34 @@ public class CientificosController {
 	CientificosServiceImpl cientificosServiceImpl;
 	
 	@GetMapping("/cientificos")
-	public List<Cajeros> listCientificos() {
+	public List<Cientificos> listCientificos() {
 		return cientificosServiceImpl.listCientificos();
 	}
 
 	@PostMapping("/cientificos")
-	public Cajeros saveCientificos(@RequestBody Cajeros cajeros) {
+	public Cientificos saveCientificos(@RequestBody Cientificos cientificos) {
 
-		return cientificosServiceImpl.saveCientificos(cajeros);
+		return cientificosServiceImpl.saveCientificos(cientificos);
 	}
 
 	@GetMapping("/cientificos/{dni}")
-	public Cajeros cientificosXID(@PathVariable(name = "dni") String dni) {
+	public Cientificos cientificosXID(@PathVariable(name = "dni") String dni) {
 	
 		return cientificosServiceImpl.cientificosXID(dni);
 
 	}
 
 	@PutMapping("/cientificos/{dni}")
-	public Cajeros updateCientificos(@PathVariable(name = "dni") String dni, @RequestBody Cajeros cajeros) {
+	public Cientificos updateCientificos(@PathVariable(name = "dni") String dni, @RequestBody Cientificos cientificos) {
 
-		Cajeros cientificos_select;
-		Cajeros cientificos_update;
+		Cientificos cientificos_select;
+		Cientificos cientificos_update;
 
 		cientificos_select = cientificosServiceImpl.cientificosXID(dni);
 		
-		cientificos_select.setDni(cajeros.getDni());
-		cientificos_select.setNombre_apellidos(cajeros.getNombre_apellidos());
-		cientificos_select.setAsignadoA(cajeros.getAsignadoA());
+		cientificos_select.setDni(cientificos.getDni());
+		cientificos_select.setNombre_apellidos(cientificos.getNombre_apellidos());
+		cientificos_select.setAsignadoA(cientificos.getAsignadoA());
 		
 		cientificos_update = cientificosServiceImpl.updateCientificos(cientificos_select);
 

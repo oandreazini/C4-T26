@@ -15,91 +15,75 @@ import javax.persistence.Table;
 import com.fasterxml.jackson.annotation.JsonIgnore;
 
 @Entity
-@Table(name = "proyectos", schema = "proyectos")
+@Table(name = "cientificos", schema = "cientificos")
+public class Cientificos {
 
-public class Proyectos {
-
-	// Atributos de entidad proyectos
-	@Id
-	@GeneratedValue(strategy = GenerationType.IDENTITY)
-	private int id;
-	@Column(name = "nombre")
-	private String nombre;
-	@Column(name = "horas")
-	private String horas;
+	// Atributos de entidad cientificos
 	
+	@Id
+		
+	@Column(name = "dni")
+	private String dni;
+	
+	@Column(name = "nombre_apellidos") 
+	private String nombre_apellidos;
+
 	@OneToMany
-	@JoinColumn(name="id")
+	@JoinColumn(name="dni")
 	private List<AsignadoA> asignadoA;
 	
 	//Constructores
+	public Cientificos() {
 	
-	public Proyectos() {
 	}
 	
 	/**
-	 * 
+	 * 	
 	 * @param id
-	 * @param nombre
-	 * @param horas
+	 * @param dni
+	 * @param nombre_apellidos
 	 * @param asignadoA
 	 */
-	public Proyectos(int id, String nombre, String horas, List<AsignadoA> asignadoA) {
-		super();
-		this.id = id;
-		this.nombre = nombre;
-		this.horas = horas;
+	public Cientificos(String dni, String nombre_apellidos, List<AsignadoA> asignadoA) {
+		
+		this.dni = dni;
+		this.nombre_apellidos = nombre_apellidos;
 		this.asignadoA = asignadoA;
 	}
 
 
 	// getter y setter
-	/**
-	 * 
-	 * @return
-	 */
-	public int getId() {
-		return id;
-	}
-	
-	/**
-	 * 
-	 * @param id
-	 */
-	public void setId(int id) {
-		this.id = id;
-	}
 	
 	/**
 	 * 
 	 * @return
 	 */
-	public String getNombre() {
-		return nombre;
+	public String getDni() {
+		return dni;
 	}
 	
 	/**
 	 * 
-	 * @param nombre
+	 * @param dni
 	 */
-	public void setNombre(String nombre) {
-		this.nombre = nombre;
+	public void setDni(String dni) {
+		this.dni = dni;
 	}
-	
+
 	/**
 	 * 
 	 * @return
 	 */
-	public String getHoras() {
-		return horas;
+	public String getNombre_apellidos() {
+		return nombre_apellidos;
 	}
 	
 	/**
 	 * 
-	 * @param horas
+	 * @param nombre_apellidos
 	 */
-	public void setHoras(String horas) {
-		this.horas = horas;
+	public void setNombre_apellidos(String nombre_apellidos) {
+		this.nombre_apellidos = nombre_apellidos;
 	}
 	
 	/**
@@ -122,7 +106,7 @@ public class Proyectos {
 
 	@Override
 	public String toString() {
-		return "Proyectos [id=" + id + ", nombre=" + nombre + ", horas=" + horas + ", asignadoA=" + asignadoA + "]";
-	}	
-	
+		return "Cientificos [dni=" + dni + ", nombre_apellidos=" + nombre_apellidos + ", asignadoA=" + asignadoA + "]";
+	}
+
 }
