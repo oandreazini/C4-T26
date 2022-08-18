@@ -1,5 +1,9 @@
 package mainApp.dao;
 
-public interface IReservasDAO {
+import org.springframework.data.jpa.repository.JpaRepository;
+
+import mainApp.dto.Reservas;
+
+public interface IReservasDAO extends JpaRepository<Reservas, Integer> {
 
 }
